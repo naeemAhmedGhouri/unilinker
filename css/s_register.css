@@ -1,0 +1,245 @@
+
+/* Include your CSS styles here */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+/* CSS Variables for Gold & Black Theme */
+:root {
+--primary: #8E44AD;           /* Royal Purple (replaces Gold) */
+--primary-light: #D2A8E4;     /* Soft Lavender (replaces Light Gold) */
+--primary-hover: #732D91;     /* Darker Purple (replaces Dark Gold) */
+--secondary: #000000;         /* True Black (replaces Black) */
+--text-on-light: #2C2C2C;     /* Dark Grey Text (replaces Dark Text) */
+--text-on-dark: #F8F8F8;      /* Very Light Text (replaces Light Text) */
+--border-color: #E6E6E6;      /* Light Grey Borders (replaces Light Border) */
+--container-bg: #FAFAFA;      /* Off-white Containers (replaces White Container) */
+--shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Softer Shadow */
+--error-color: #e74c3c;       /* Red (kept from original) */
+
+/* New variables from the replacement set */
+--secondary-light: #1A1A1A;   /* Softened Black */
+--background: #FFFFFF;        /* White Background */
+}
+/* Base Styles */
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+body {
+background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+min-height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+padding: 20px;
+}
+
+/* Container with Light Background */
+.container {
+background: var(--container-bg);
+border-radius: 16px;
+box-shadow: var(--shadow);
+padding: 40px;
+width: 100%;
+max-width: 450px;
+position: relative;
+overflow: hidden;
+border: 1px solid var(--border-color);
+margin: 20px;
+}
+
+/* Gold Accent Bar */
+.container:before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+height: 5px;
+background: var(--primary);
+}
+
+/* Header */
+.container header {
+font-size: 28px;
+font-weight: 600;
+text-align: center;
+margin-bottom: 25px;
+color: var(--primary);
+letter-spacing: 0.5px;
+}
+
+/* Form Elements */
+.form {
+display: flex;
+flex-direction: column;
+gap: 18px;
+}
+
+.input-box {
+margin-bottom: 5px;
+}
+
+.input-box label,
+.gender-box h3,
+.image-box p {
+display: block;
+font-size: 14px;
+color: var(--secondary);
+margin-bottom: 8px;
+font-weight: 600;
+letter-spacing: 0.3px;
+}
+
+.input-box input,
+.input-box select,
+.image-box input[type="file"] {
+width: 100%;
+padding: 14px 16px;
+font-size: 15px;
+border: 1px solid var(--border-color);
+border-radius: 8px;
+background: var(--container-bg);
+color: var(--secondary);
+transition: all 0.3s ease;
+}
+
+.image-box input[type="file"] {
+padding: 10px;
+}
+
+.input-box input:focus,
+.input-box select:focus {
+outline: none;
+border-color: var(--primary);
+box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.2);
+}
+
+/* Gender and University Options */
+.gender-option,
+.university-option {
+display: flex;
+flex-wrap: wrap;
+gap: 15px;
+margin-top: 8px;
+}
+
+.gender-option label,
+.university-option label {
+display: flex;
+align-items: center;
+gap: 8px;
+font-weight: 500;
+color: var(--secondary);
+cursor: pointer;
+}
+
+.gender-option input[type="radio"],
+.university-option input[type="radio"] {
+accent-color: var(--primary);
+width: 16px;
+height: 16px;
+}
+
+/* Gold Button */
+.logins-button {
+width: 100%;
+background: var(--primary);
+color: var(--background);
+border: none;
+padding: 14px;
+font-size: 16px;
+font-weight: 600;
+border-radius: 8px;
+cursor: pointer;
+transition: all 0.3s ease;
+margin-top: 15px;
+letter-spacing: 0.5px;
+}
+
+.logins-button:hover {
+background: var(--primary-hover);
+transform: translateY(-2px);
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Login Link */
+.text {
+text-align: center;
+margin-top: 20px;
+font-size: 14px;
+color: var(--secondary);
+}
+
+.text a {
+color: var(--primary);
+text-decoration: none;
+font-weight: 600;
+transition: all 0.2s ease;
+}
+
+.text a:hover {
+color: var(--primary-hover);
+text-decoration: underline;
+}
+
+/* Error Messages */
+p[style*="color: red"] {
+background: rgba(231, 76, 60, 0.1);
+border-left: 3px solid var(--error-color);
+color: var(--error-color) !important;
+padding: 12px;
+border-radius: 4px;
+margin: 15px 0;
+font-size: 14px;
+}
+
+/* Department Select Boxes */
+#bs-department,
+#be-department {
+animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+from { opacity: 0; transform: translateY(-10px); }
+to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+body {
+padding: 15px;
+display: block;
+}
+
+.container {
+padding: 30px 20px;
+margin: 0 auto;
+max-width: 100%;
+border-radius: 12px;
+}
+
+.container header {
+font-size: 24px;
+}
+
+.gender-option,
+.university-option {
+gap: 10px;
+}
+}
+.alert {
+padding: 12px 14px;
+border-radius: 8px;
+margin: 10px 0 20px;
+font-weight: 600;
+text-align: center;
+border: 1px solid transparent;
+}
+
+.alert.error {
+background: #f8d7da;
+color: #721c24;
+border-color: #f5c6cb;
+}

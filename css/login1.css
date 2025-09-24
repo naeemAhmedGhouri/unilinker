@@ -1,0 +1,312 @@
+        /* General Styles */
+/* CSS Variables for Color Palette */
+/* CSS Variables for Gold & Black Theme */
+:root {
+    --primary: #8E44AD;           /* Royal Purple */
+    --primary-light: #D2A8E4;     /* Soft Lavender */
+    --primary-hover: #732D91;     /* Darker Purple for Hover */
+    
+    --secondary: #000000;         /* True Black */
+    --secondary-light: #1A1A1A;   /* Softened Black */
+    
+     /* Muted Gold for hover */
+  
+    --background: #FFFFFF;        /* White Background */
+    --container-bg: #FAFAFA;      /* Slightly Off-white Containers */
+    
+    --text-on-light: #2C2C2C;     /* Dark Grey Text */
+    --text-on-dark: #F8F8F8;      /* Very Light Text on Dark */
+  
+    --border-color: #E6E6E6;      /* Light Grey Borders */
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Softer Shadow */
+  }
+  
+  /* Base Styles */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  }
+  
+  body {
+    background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  /* Container with Light Background */
+  .container {
+    background: var(--container-bg);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    padding: 40px;
+    width: 100%;
+    max-width: 420px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+  }
+  
+  /* Gold Accent Bar */
+  .container:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: var(--primary);
+  }
+  
+  /* Logo Styling */
+  .container img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin: 0 auto 25px;
+    display: block;
+    border-radius: 50%;
+    border: 3px solid var(--primary);
+    padding: 3px;
+    background: var(--container-bg);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .container img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Heading */
+  .container h1 {
+    color: var(--primary);
+    font-size: 28px;
+    margin-bottom: 25px;
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+  
+  /* Form Elements */
+  .container form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .container label {
+    display: block;
+    font-size: 13px;
+    color: var(--secondary);
+    margin-bottom: 8px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  .container input {
+    width: 100%;
+    padding: 14px 16px;
+    font-size: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--container-bg);
+    color: var(--secondary);
+    transition: all 0.3s ease;
+  }
+  
+  .container input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.2);
+  }
+  
+  /* Checkbox Styling */
+  .remember-me {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 5px 0 15px;
+  }
+  
+  .remember-me input {
+    width: auto;
+    accent-color: var(--primary);
+  }
+  
+  .remember-me label {
+    margin: 0;
+    text-transform: none;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--secondary);
+  }
+  
+  /* Gold Button */
+  .container button {
+    background: var(--primary);
+    color: var(--secondary);
+    border: none;
+    padding: 14px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    letter-spacing: 0.5px;
+  }
+  
+  .container button:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+  }
+  
+  /* Links Below Form */
+  .extra-links {
+    margin-top: 25px;
+    text-align: center;
+    font-size: 14px;
+  }
+  
+  .extra-links p {
+    margin: 12px 0;
+    color: var(--secondary);
+  }
+  
+  .extra-links a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    display: inline-block;
+  }
+  
+  .extra-links a:hover {
+    color: var(--primary-hover);
+    text-decoration: underline;
+  }
+  
+  /* Modal Styling */
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(3px);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    background: var(--container-bg);
+    border-radius: 12px;
+    padding: 30px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: var(--shadow);
+    border-top: 4px solid var(--primary);
+  }
+  
+  .modal-content h2 {
+    color: var(--primary);
+    margin-bottom: 25px;
+    font-size: 22px;
+  }
+  
+  .modal-content a {
+    display: block;
+    background: var(--primary);
+    color: var(--secondary);
+    padding: 12px;
+    margin: 12px 0;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-align: center;
+  }
+  
+  .modal-content a:hover {
+    background: var(--primary-hover);
+  }
+  
+  .btn1 {
+    background: transparent;
+    color: var(--primary);
+    border: 1px solid var(--primary);
+    padding: 12px;
+    width: 100%;
+    margin-top: 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+  }
+  
+  .btn1:hover {
+    background: var(--primary);
+    color: var(--secondary);
+  }
+  
+  /* Error Messages */
+  p[style*="color: red"] {
+    background: rgba(255, 0, 0, 0.05);
+    border-left: 3px solid #ff6b7a;
+    color: #ff6b7a !important;
+    padding: 12px;
+    border-radius: 4px;
+    margin: 15px 0;
+    font-size: 14px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 480px) {
+    body {
+      padding: 15px;
+      display: block;
+    }
+    
+    .container {
+      padding: 30px 20px;
+      margin: 0 auto;
+      max-width: 100%;
+      border-radius: 12px;
+    }
+    
+    .container h1 {
+      font-size: 24px;
+    }
+    
+    .container img {
+      width: 80px;
+      height: 80px;
+    }
+    
+    .modal-content {
+      padding: 25px 20px;
+    }
+    
+    .modal-content h2 {
+      font-size: 20px;
+    }
+  }
+  
+  /* Animation for Modal */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  .modal {
+    animation: fadeIn 0.3s ease;
+  }

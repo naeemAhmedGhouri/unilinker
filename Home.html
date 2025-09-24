@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unilinker - Homepage</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color:#2980b9;
+        }
+        h1, h2, h3, p {
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            text-decoration: none;
+        }
+
+        /* Header Section */
+        header {
+            background-color: #2C3E50;
+            color: white;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        header img {
+            height: 50px;
+        }
+        nav a {
+            color: white;
+            font-size: 16px;
+            margin-right: 25px;
+            transition: all 0.3s ease;
+        }
+        nav a:hover {
+            color: #1abc9c;
+        }
+
+        /* Main Banner */
+        .banner {
+            background: url('banner-image.jpg') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            background-size: cover;
+        }
+        .banner h1 {
+            font-size: 50px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .banner p {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        .cta-button {
+            background-color: #1abc9c;
+            color: white;
+            padding: 15px 40px;
+            font-size: 18px;
+            border-radius: 30px;
+            text-transform: uppercase;
+            margin-top: 30px;
+            transition: all 0.3s ease;
+        }
+        .cta-button:hover {
+            background-color: #16a085;
+        }
+
+        /* Feature Highlights Section */
+        .features {
+            display: flex;
+            justify-content: space-around;
+            padding: 50px 20px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-top: -60px;
+            z-index: 1;
+            position: relative;
+        }
+        .features div {
+            width: 30%;
+            text-align: center;
+            background-color: #ecf0f1;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        .features div:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        .features h2 {
+            font-size: 24px;
+            color: #34495e;
+            margin-bottom: 15px;
+        }
+        .features ul {
+            list-style: none;
+            color: #7f8c8d;
+            padding: 0;
+        }
+        .features ul li {
+            font-size: 16px;
+            margin: 10px 0;
+        }
+
+        /* Call-to-Action Section */
+        .cta {
+            background-color: #2C3E50;
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+        .cta h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        .cta p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+        .cta .cta-button {
+            background-color: #e67e22;
+            padding: 15px 40px;
+            font-size: 18px;
+            text-transform: uppercase;
+            border-radius: 30px;
+            margin: 0 15px;
+            transition: all 0.3s ease;
+        }
+        .cta .cta-button:hover {
+            background-color: #d35400;
+        }
+        .cta .cta-button:last-child {
+            background-color: #3498db;
+        }
+        .cta .cta-button:last-child:hover {
+            background-color: #2980b9;
+        }
+
+        /* Student and Teacher Panels */
+        .panel-container {
+            display: flex;
+            justify-content: center;
+            padding: 40px;
+            background-color: #ffffff;
+        }
+        .panel {
+            width: 45%;
+            padding: 30px;
+            background-color: #ecf0f1;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin: 0 20px;
+        }
+        .panel h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .panel p {
+            font-size: 18px;
+            text-align: center;
+        }
+        .panel .btn {
+            display: block;
+            background-color: #1abc9c;
+            color: white;
+            padding: 12px 25px;
+            font-size: 18px;
+            margin: 20px auto;
+            text-align: center;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+        }
+        .panel .btn:hover {
+            background-color: #16a085;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div>
+                <img src="logo.png" alt="Logo">
+            </div>
+            <nav>
+                <a href="#">Home</a>
+                <a href="#about">About</a>
+                <a href="#login">Login</a>
+                <a href="#Sign Up">Sign Up</a>
+                <a href="#contact">Contact Us</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Banner Section -->
+    <section class="banner">
+        <h1>UniLinker: A Web-based Social Media App for University Students and Educators</h1>
+        
+        <a href="#cta" class="cta-button" style="margin-top: 10;">Join Now</a>
+    </section>
+
+    <!-- Feature Highlights Section -->
+    <section class="features">
+        <div>
+            <h2>Teacher Features</h2>
+            <ul>
+                <li>Create and share lectures</li>
+                <li>Monitor student progress</li>
+                <li>Interactive Q&A</li>
+            </ul>
+        </div>
+        <div>
+            <h2>Student Features</h2>
+            <ul>
+                <li>Access materials</li>
+                <li>Post questions</li>
+                <li>Like and comment on posts</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Call-to-Action Section -->
+    <section class="cta" id="cta">
+        <h2>Ready to Join?</h2>
+        <p>Become a part of Unilinker today!</p>
+        <div>
+            <a href="SignupTeacher.html" class="cta-button">Signup as Teacher</a>
+            <a href="Signup.html" class="cta-button">Sign Up as Student</a>
+        </div>
+    </section>
+
+    <!-- Student and Teacher Panels -->
+    <section id="panels">
+        <div class="panel-container">
+            <!-- Teacher Panel -->
+            <div class="panel">
+                <h3>Teacher Panel</h3>
+                <p>Manage your lectures, monitor student progress, and interact with students effectively.</p>
+                <a href="Teacher.html" class="btn">Go to Teacher Dashboard</a>
+            </div>
+
+            <!-- Student Panel -->
+            <div class="panel">
+                <h3>Student Panel</h3>
+                <p>Access course materials, interact with teachers, and track your academic progress.</p>
+                <a href="Student.html" class="btn">Go to Student Dashboard</a>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
