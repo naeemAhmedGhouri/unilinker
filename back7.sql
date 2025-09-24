@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 26, 2025 at 08:11 AM
+-- Generation Time: Sep 21, 2025 at 02:34 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -37,7 +37,8 @@ CREATE TABLE `bookmark` (
 --
 
 INSERT INTO `bookmark` (`user_id`, `playlist_id`) VALUES
-('4KtPRVwnRqdYgHktCob1', 'destRnUBv4JaOZJpqLjX');
+('4KtPRVwnRqdYgHktCob1', 'destRnUBv4JaOZJpqLjX'),
+('4KtPRVwnRqdYgHktCob1', '1jSzrkRJWFjvwOdZePZD');
 
 -- --------------------------------------------------------
 
@@ -59,7 +60,8 @@ CREATE TABLE `comments` (
 --
 
 INSERT INTO `comments` (`id`, `content_id`, `user_id`, `tutor_id`, `comment`, `date`) VALUES
-('OSudM55CEvokxan1DzWP', 'sEBvcr2lynSwO8wMVPaA', 'JLL2u80LrLRJGo3maI3d', 'gH34TD1CnzJxJm4pn97n', 'Informative lecture ', '2025-07-29');
+('OSudM55CEvokxan1DzWP', 'sEBvcr2lynSwO8wMVPaA', 'JLL2u80LrLRJGo3maI3d', 'gH34TD1CnzJxJm4pn97n', 'Informative lecture ', '2025-07-29'),
+('FE1FtlnoBsYhHMsoZMIT', '3esA5OuvDzb7LGfYQ4Vy', '4KtPRVwnRqdYgHktCob1', 'OvVVVqjPcQ2aQjhRqiUe', 'informative', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -71,7 +73,8 @@ CREATE TABLE `contact` (
   `name` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
   `number` int(10) NOT NULL,
-  `message` varchar(1000) NOT NULL
+  `message` varchar(1000) NOT NULL,
+  `status` varchar(20) DEFAULT 'unread'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -100,7 +103,12 @@ INSERT INTO `content` (`id`, `tutor_id`, `playlist_id`, `title`, `description`, 
 ('sEBvcr2lynSwO8wMVPaA', 'gH34TD1CnzJxJm4pn97n', 'destRnUBv4JaOZJpqLjX', 'Digital Logic Design', 'Introduction of DIgital Logic Design', 'bFcGU1zEyavthSzUpKy0.pptx', 'nSXGrrtgb14TK0Kn3dlG.gif', '2025-07-23', 'active'),
 ('v0GesG4S6ZXGauL3LvVz', 'gH34TD1CnzJxJm4pn97n', 'destRnUBv4JaOZJpqLjX', 'ai', 'hhh', 'mCW99wgH07laADxGg6t2.docx', 'vb5OydAsIRexQhJ31WMK.png', '2025-07-24', 'active'),
 ('RGYM0Nrgsw0NZyVRox5Z', 'BruwnR3NEh4jMJPyZOqn', 'OyJI1MBLbXpZmsdOvdIO', 'ICT', 'introduction to computing', '6kUHOq8urrcwHpLcGuM3.pdf', 'GcVp3zudCWt5igawdXbB.jfif', '2025-07-28', 'active'),
-('Lh850Klv6TVtWHH6hGON', 'gH34TD1CnzJxJm4pn97n', 'hbPqJz6TnamlcbsK6liA', 'Python Lecture 1', 'This is the basic Introduction to Python Lecture 1 \r\nfor the students \r\nin the last page of the slide \r\nthere is exercise must do it ', 'IlMnwbBeLaiWX4Empuxm.pdf', 'gbBoI0RhQ3jT4g6tiJqg.jfif', '2025-07-30', 'active');
+('Lh850Klv6TVtWHH6hGON', 'gH34TD1CnzJxJm4pn97n', 'hbPqJz6TnamlcbsK6liA', 'Python Lecture 1', 'This is the basic Introduction to Python Lecture 1 \r\nfor the students \r\nin the last page of the slide \r\nthere is exercise must do it ', 'IlMnwbBeLaiWX4Empuxm.pdf', 'gbBoI0RhQ3jT4g6tiJqg.jfif', '2025-07-30', 'active'),
+('bN12zYx7E2eg11mNqR9W', '8eEKUPgjl86sr7htyL8O', 'NRd5GzhJBKAckX5fjpbX', 'FlipFlop', 'Details', 'kKfmUQG0hPAdaDa4suLq.pdf', 'nH5DZBM9tX3DLVQDb9hD.jpeg', '2025-08-26', 'active'),
+('3esA5OuvDzb7LGfYQ4Vy', 'OvVVVqjPcQ2aQjhRqiUe', '1jSzrkRJWFjvwOdZePZD', 'BDA lecture 1', 'intro ', 'nOvLVvb80ahm94XVagtv.docx', 'nLlmzKXWMGrCOHTzLy5Q.png', '2025-08-26', 'active'),
+('U0tPrpG4ZvNgQxTbv1WT', 'OvVVVqjPcQ2aQjhRqiUe', 'qYq5MjsjpqflJy2uloTp', 'Linear algebra', 'intro', 'luT5VWoJb324wKVxQ3vE.pdf', '15vH898YNGwff7Hisb6c.png', '2025-08-26', 'active'),
+('tLR4JdrK1Eok3zALaxeN', 'OvVVVqjPcQ2aQjhRqiUe', '', 'bda lecture 2', 'overview', 'Scu53ZxJifbpXf9tB0mC.docx', 'CSjV3aYdOSgUydTMDjzk.png', '2025-08-26', 'active'),
+('15IUr9hIoKNBPkJzU6uc', 'OvVVVqjPcQ2aQjhRqiUe', '1jSzrkRJWFjvwOdZePZD', 'bda', 'overview', 'SjoghVT63z1NhLE8C0LM.docx', 'MvoJoLlMAueTDQdY2nRO.png', '2025-08-26', 'active');
 
 -- --------------------------------------------------------
 
@@ -186,7 +194,8 @@ CREATE TABLE `likes` (
 INSERT INTO `likes` (`user_id`, `tutor_id`, `content_id`) VALUES
 ('4KtPRVwnRqdYgHktCob1', 'gH34TD1CnzJxJm4pn97n', 'v0GesG4S6ZXGauL3LvVz'),
 ('JLL2u80LrLRJGo3maI3d', 'gH34TD1CnzJxJm4pn97n', 'sEBvcr2lynSwO8wMVPaA'),
-('JLL2u80LrLRJGo3maI3d', 'gH34TD1CnzJxJm4pn97n', 'v0GesG4S6ZXGauL3LvVz');
+('JLL2u80LrLRJGo3maI3d', 'gH34TD1CnzJxJm4pn97n', 'v0GesG4S6ZXGauL3LvVz'),
+('4KtPRVwnRqdYgHktCob1', 'OvVVVqjPcQ2aQjhRqiUe', '3esA5OuvDzb7LGfYQ4Vy');
 
 -- --------------------------------------------------------
 
@@ -229,8 +238,30 @@ INSERT INTO `messages` (`id`, `sender_id`, `receiver_id`, `message`, `date`, `is
 (0, 'gH34TD1CnzJxJm4pn97n', 'yXYNwjIAofYgdAhwpuZT', 'maam*', '2025-08-22 12:52:50', 1, '2025-08-22 13:33:51'),
 (0, 'gH34TD1CnzJxJm4pn97n', '8eEKUPgjl86sr7htyL8O', 'Asalam Alaikum Sir ', '2025-08-22 12:54:26', 1, '2025-08-22 12:57:49'),
 (0, 'gH34TD1CnzJxJm4pn97n', '8eEKUPgjl86sr7htyL8O', 'can I use Your lectures they are really informative?', '2025-08-22 12:55:27', 1, '2025-08-22 12:57:49'),
-(0, 'yXYNwjIAofYgdAhwpuZT', 'gH34TD1CnzJxJm4pn97n', 'G haan meiny sign kar dea hai ', '2025-08-22 13:34:04', 0, NULL),
-(0, 'yXYNwjIAofYgdAhwpuZT', 'gH34TD1CnzJxJm4pn97n', 'ap bhi kar lei sign', '2025-08-22 13:34:35', 0, NULL);
+(0, 'yXYNwjIAofYgdAhwpuZT', 'gH34TD1CnzJxJm4pn97n', 'G haan meiny sign kar dea hai ', '2025-08-22 13:34:04', 1, '2025-09-16 13:41:02'),
+(0, 'yXYNwjIAofYgdAhwpuZT', 'gH34TD1CnzJxJm4pn97n', 'ap bhi kar lei sign', '2025-08-22 13:34:35', 1, '2025-09-16 13:41:02'),
+(0, 'gH34TD1CnzJxJm4pn97n', 'OvVVVqjPcQ2aQjhRqiUe', 'Asalam alaikum', '2025-09-17 21:14:16', 0, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `password_resets`
+--
+
+CREATE TABLE `password_resets` (
+  `id` int(11) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `token` varchar(64) NOT NULL,
+  `expires_at` datetime NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `password_resets`
+--
+
+INSERT INTO `password_resets` (`id`, `email`, `token`, `expires_at`, `created_at`) VALUES
+(1, 'bisma@gmail.com', 'b7692fe8fb7279df6e8c118ea5f1e729ef0461fccaffab44c383744e1f074674', '2025-09-05 12:50:58', '2025-09-05 09:50:58');
 
 -- --------------------------------------------------------
 
@@ -257,7 +288,11 @@ INSERT INTO `playlist` (`id`, `tutor_id`, `title`, `description`, `thumb`, `date
 ('destRnUBv4JaOZJpqLjX', 'gH34TD1CnzJxJm4pn97n', 'DLD', 'Auto-created playlist', 'FxGhlYFmroD0hiqOFcwV.jpg', '2025-07-23', 'active', ''),
 ('OyJI1MBLbXpZmsdOvdIO', 'BruwnR3NEh4jMJPyZOqn', 'ICT', 'Auto-created playlist', 'eFz6orT9nyLlPhB1EF0h.png', '2025-07-28', 'active', ''),
 ('sHFqo29aBhzgZFyysVh2', '2ROTOY1lD2hGm1Sb9yPC', 'Data Science', 'Intro to Data Science', 'RM6ef8Q0ZtGBaOHDWDiU.jpg', '2025-07-29', 'active', ''),
-('snfxKY63LVKsWqwlQtyp', '68JUaTigVgDFmWxya5UG', 'software Engineering', 'intro', 'tGvGwAM5iL4AMwu7KIHA.jfif', '2025-08-02', 'active', '');
+('snfxKY63LVKsWqwlQtyp', '68JUaTigVgDFmWxya5UG', 'software Engineering', 'intro', 'tGvGwAM5iL4AMwu7KIHA.jfif', '2025-08-02', 'active', ''),
+('U4Raa8b63AgoJmhEG758', '8eEKUPgjl86sr7htyL8O', 'DLD', 'Auto-created playlist', 'default_playlist.jpg', '2025-08-26', 'active', ''),
+('NRd5GzhJBKAckX5fjpbX', '8eEKUPgjl86sr7htyL8O', 'DLD', 'Auto-created playlist', 'default_playlist.jpg', '2025-08-26', 'active', ''),
+('1jSzrkRJWFjvwOdZePZD', 'OvVVVqjPcQ2aQjhRqiUe', 'BDA', 'Intro to advance', 'svHUXgaRL2Om0ADBgzNu.png', '2025-08-26', 'active', ''),
+('qYq5MjsjpqflJy2uloTp', 'OvVVVqjPcQ2aQjhRqiUe', 'Linear Algebra', 'linear algebra intro', '5yWbWgJusZJnANo4h8Ax.png', '2025-08-26', 'active', '');
 
 -- --------------------------------------------------------
 
@@ -297,7 +332,14 @@ INSERT INTO `tutors` (`id`, `name`, `username`, `profession`, `email`, `password
 ('NCaZVVe85Ywapq3UiwFG', 'xyz', 'XYZ', '', 'xyz@gmail.com', '39dfa55283318d31afe5a3ff4a0e3253e2045e43', 'KbGWSkENf6FjOOeL0VXT.jfif', 'Female', 'BS', '2021,2023', 'Mehran', 'Rejected', NULL, 'Computer Science'),
 ('8eEKUPgjl86sr7htyL8O', 'Dr. Aijaz Ahmed Arain', 'Dr Aijaz Ahmed Arain', '', 'Aijazahmed@gmail.com', '39dfa55283318d31afe5a3ff4a0e3253e2045e43', 'SRsTtnrzC3El9YTyEIjY.jpg', 'Male', 'BS', '2021,2022,2023', 'Quest', 'Approved', NULL, 'Computer Science'),
 ('i76lkkthumTy4T9aOXoH', 'Mr. Nadeem Channa', 'Mr. Nadeem Channa', '', 'nadeemchanna@gmail.com', '39dfa55283318d31afe5a3ff4a0e3253e2045e43', 'hKCWowG55snBwsqxRv9g.jpg', 'Male', 'BS', '2021,2022', 'Quest', 'Approved', NULL, 'Computer Science'),
-('yXYNwjIAofYgdAhwpuZT', 'Dr Shamshad Lakho', 'Dr Shamshad Lakho ', '', 'shamshad@gmail.com', '39dfa55283318d31afe5a3ff4a0e3253e2045e43', 'a7nXukUFLgIOGTG8fTkS.jfif', 'Female', 'BS', '2021,2022', 'Quest', 'Approved', NULL, 'Computer Science');
+('yXYNwjIAofYgdAhwpuZT', 'Dr Shamshad Lakho', 'Dr Shamshad Lakho ', '', 'shamshad@gmail.com', '39dfa55283318d31afe5a3ff4a0e3253e2045e43', 'a7nXukUFLgIOGTG8fTkS.jfif', 'Female', 'BS', '2021,2022', 'Quest', 'Approved', NULL, 'Computer Science'),
+('OvVVVqjPcQ2aQjhRqiUe', 'Faryal Arshad', 'Faryal Arshad', '', 'faryal@gmail.com', '39dfa55283318d31afe5a3ff4a0e3253e2045e43', 'yr2Se5mnoP446F51Jwis.jfif', 'Female', 'BS', '2021,2022', 'Quest', 'Approved', NULL, 'Information Technology,Computer Science,Data Science'),
+('gg2o9AAneltppra3TbI3', 'Sanna Khan', 'Sana khan', '', 'bisma.malikk32@gmail.com', '011c945f30ce2cbafc452f39840f025693339c42', '2V7IaDqICAknNs6psNM4.jpg', 'Female', 'BS', '2022,2023', 'Quest', 'Approved', NULL, 'Information Technology,Computer Science,Cyber Security'),
+('hqN1dYeWVqEiLzYmoHn6', 'Firdos Khan', 'Sana Khan', '', 'firdosmalick060@gmail.com', '011c945f30ce2cbafc452f39840f025693339c42', 'TqI8jxdS3TC7C8QP89jD.jpg', 'Female', 'BE', '2022,2023', 'Mehran', 'Approved', NULL, 'Software Engineering,Mechanical Engineering,Civil Engineering'),
+('NKInHe0BKO46HPMoywmb', 'Engr Anees Ahmed Soomro', 'Engr Anees Soomro', '', 'Aneessoomro@gmail.com', '011c945f30ce2cbafc452f39840f025693339c42', 'Oehw8hiwkoKi8hhcJPQP.jpg', 'Male', 'BS', '2022,2023', 'SBBU', 'Approved', NULL, 'Computer Science'),
+('xMp3yP5HFuX84xyxWmE3', 'Engr Meer Muhammad Juno', 'Meer Muhammad Junno', '', 'meerM.juno@gmail.com', '011c945f30ce2cbafc452f39840f025693339c42', 'W1f9dt5xjUc8f2SAbnxL.jpg', 'Male', 'BS', '2022,2023', 'SBBU', 'Approved', NULL, 'Data Science'),
+('h1eS8LG688qZAFy74EEP', 'Prof Dr. Akhtar Hussain Jalbani', 'Akhtar Hussain Jalbani', '', 'AkhtarJalbani@gmail.com', '011c945f30ce2cbafc452f39840f025693339c42', 'ziDdXjtWMSWNPDYr8Fs8.jpg', 'Male', 'BS', '2022', 'Mehran', 'Approved', NULL, 'Computer Science'),
+('pYUaSPY4WvqhWa7idGxL', 'Lect. Ayesha batool', 'Ayesha Batool', '', 'aishabatool@gmail.com', '011c945f30ce2cbafc452f39840f025693339c42', 'RtpcIZUwx9WySHqBR1Bu.jfif', 'Female', 'BE', '2022,2023', 'Mehran', 'Approved', NULL, 'Electrical Engineering');
 
 -- --------------------------------------------------------
 
@@ -326,7 +368,8 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `full_name`, `email`, `password`, `image`, `username`, `gender`, `batch_roll_no`, `university`, `program`, `department`) VALUES
 ('4KtPRVwnRqdYgHktCob1', 'bisma', 'bisma@gmail.com', '39dfa55283318d31afe5a3ff4a0e3253e2045e43', 'rrsZMiMaOqd9tfunoAiJ.png', 'bisma', 'Female', '21bcs79', 'Quest', 'BS', 'Software Engineering'),
 ('JLL2u80LrLRJGo3maI3d', 'ali', 'ali@gmail.com', '39dfa55283318d31afe5a3ff4a0e3253e2045e43', 'kCmPSSqBcuNQO03lhaj4.png', 'ali', 'Male', '01bcs01', 'Quest', 'BS', 'Software Engineering'),
-('rAON5d7RAG6dfPKTLZXI', 'xyz', 'xyz@gmail.com', '39dfa55283318d31afe5a3ff4a0e3253e2045e43', 'Dtl8LIpTXWdn9EViMfWn.png', 'xyz', 'Female', '21bcs01', 'SBBU', 'BS', 'Software Engineering');
+('rAON5d7RAG6dfPKTLZXI', 'xyz', 'xyz@gmail.com', '39dfa55283318d31afe5a3ff4a0e3253e2045e43', 'Dtl8LIpTXWdn9EViMfWn.png', 'xyz', 'Female', '21bcs01', 'SBBU', 'BS', 'Software Engineering'),
+('nMImZe67zTTDbmdIBTzk', 'Bisma Malik', 'bisma.sarwar.malik@gmail.com', '3d4f2bf07dc1be38b20cd6e46949a1071f9d0e3d', 'CR8kwiPMPCmWIQqWMFso.jpg', 'Bisma  Maliikk', 'Female', '21bcs79', 'SBBU', 'BS', 'Software Engineering');
 
 --
 -- Indexes for dumped tables
@@ -366,6 +409,14 @@ ALTER TABLE `forum_post_likes`
   ADD UNIQUE KEY `unique_like` (`post_id`,`user_id`,`user_type`);
 
 --
+-- Indexes for table `password_resets`
+--
+ALTER TABLE `password_resets`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `token` (`token`),
+  ADD KEY `email` (`email`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -392,6 +443,12 @@ ALTER TABLE `forum_post_comments`
 --
 ALTER TABLE `forum_post_likes`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `password_resets`
+--
+ALTER TABLE `password_resets`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Constraints for dumped tables
